@@ -241,8 +241,8 @@ Future<void> _main(ArgResults args) async {
   final rustc = args['rustc'] as String? ?? 'rustc';
   final rustup = args['rustup'] as String? ?? 'rustup';
   final cargo = args['cargo'] as String? ?? 'cargo';
-  final clang = args['clang'] as String? ?? 'clang';
-  final clangpp = args['clangpp'] as String? ?? 'clang++';
+  final clang = (args['clang'] as String? ?? 'clang') + '.cmd';
+  final clangpp = (args['clangpp'] as String? ?? 'clang++') + '.cmd';
 
   final target = args['target'] as String? ?? await _getTargetTriple(rustc);
   final sdkDir = _getSdkDir();

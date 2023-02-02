@@ -20,10 +20,10 @@ final _workingDirectory = Isolate.resolvePackageUri(
 ).then((value) => value!.resolve('..').toFilePath());
 
 Future<int> _runFlutter(List<String> args) async {
-  print('flutter ${args.join(' ')}');
+  print('flutter.bat ${args.join(' ')}');
 
   final process = await Process.start(
-    'flutter',
+    'flutter.bat',
     args,
     workingDirectory: await _workingDirectory,
     mode: ProcessStartMode.inheritStdio,
